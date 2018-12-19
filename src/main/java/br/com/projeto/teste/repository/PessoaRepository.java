@@ -1,6 +1,6 @@
 package br.com.projeto.teste.repository;
 
-import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -14,6 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import br.com.projeto.teste.entity.Pessoa;
+import br.com.projeto.teste.ext.ExceptionIdNaoEncontrado;
 import br.com.projeto.teste.service.PessoaService;
 
 @Path("/pessoas")
@@ -24,14 +25,14 @@ public class PessoaRepository {
 
 	@GET
 	@Produces("application/json")
-	public HashMap<Integer, Pessoa> getPessoas() {
+	public List<Pessoa> getPessoas() {
 		return pessoaService.buscarTodos();
 	}
 
 	@GET
 	@Path("/{id}")
 	@Produces("application/json")
-	public Response buscarPorId(@PathParam("id") int id) {
+	public Response buscarPorId(@PathParam("id") int id) throws ExceptionIdNaoEncontrado {
 		String resultado = pessoaService.buscarPessoa(id).toString();
 		return Response.status(200).entity(resultado).build();
 	}
@@ -46,7 +47,7 @@ public class PessoaRepository {
 
 	@PUT
 	@Consumes("application/json")
-	public String alteraPessoa(Pessoa pessoa) {
+	public String alteraPessoa(Pessoa pessoa) throws ExceptionIdNaoEncontrado {
 		Pessoa pessoaAlterada = pessoaService.buscarPessoa(pessoa.getId());
 		pessoaAlterada = pessoa;
 		pessoaService.alterarPessoa(pessoaAlterada);

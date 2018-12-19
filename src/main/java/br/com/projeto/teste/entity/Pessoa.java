@@ -1,8 +1,21 @@
 package br.com.projeto.teste.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_PESSOA")
+@NamedQuery(name="Pessoa.findAll", query="SELECT p FROM TB_PESSOA p") 
 public class Pessoa {
 	private String nome, cargo;
 	private int idade;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id = 0;
 
 	public String getNome() {

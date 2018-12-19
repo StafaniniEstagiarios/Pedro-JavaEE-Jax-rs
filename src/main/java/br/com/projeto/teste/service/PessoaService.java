@@ -1,13 +1,13 @@
 package br.com.projeto.teste.service;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
+import br.com.projeto.teste.dao.PessoaDAO;
 import br.com.projeto.teste.entity.Pessoa;
-import br.com.projeto.teste.ext.ExceptionIdNaoEncontrado;
 
 @Named
 @SessionScoped
@@ -15,29 +15,23 @@ public class PessoaService implements Serializable {
 
 	private static final long serialVersionUID = 7951866566758915339L;
 
-	HashMap<Integer, Pessoa> pessoas = new HashMap<Integer, Pessoa>();
-
-	public void adicionarPessoa(Pessoa pessoa) {
-		pessoas.put(pessoa.getId(), pessoa);
+	public Pessoa adicionarPessoa(Pessoa pessoa) {
+		return PessoaDAO.getInstance().adicionarPessoa(pessoa);
 	}
 
-	public void deletarPessoa(Integer id) {
-		pessoas.remove(id);
+	public String deletarPessoa(Integer id) {
+		return PessoaDAO.getInstance().deletarPessoa(id);
 	}
 
-	public Pessoa buscarPessoa(Integer id) throws ExceptionIdNaoEncontrado{
-		if (pessoas.get(id) != null) {
-			return pessoas.get(id);
-		}else {
-			throw new ExceptionIdNaoEncontrado("ID não encontrado!");
-		}	
+	public Pessoa buscarPessoa(Integer id) {
+		return PessoaDAO.getInstance().buscarPessoa(id);
 	}
 
-	public HashMap<Integer, Pessoa> buscarTodos() {
-		return pessoas;
+	public List<Pessoa> buscarTodos() {
+		return PessoaDAO.getInstance().buscarTodos();
 	}
 
-	public void alterarPessoa(Pessoa pessoa) {
-		pessoas.put(pessoa.getId(), pessoa);
+	public Pessoa alterarPessoa(Pessoa pessoa) {
+		return PessoaDAO.getInstance().alterarPessoa(pessoa);
 	}
 }

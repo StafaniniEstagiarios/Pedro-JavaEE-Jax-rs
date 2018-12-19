@@ -1,6 +1,8 @@
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\ext\ExceptionIdNaoEncontrado.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\service\PessoaService.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\dao\PessoaDAO.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\repository\PessoaRepository.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\entity\Pessoa.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\ext\ExceptionIdNaoEncontradoMapper.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\repository\InicioRepository.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\entityManager\JpaEntityManager.java
