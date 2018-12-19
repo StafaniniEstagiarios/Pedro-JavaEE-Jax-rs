@@ -1,1 +1,6 @@
-br\com\ProjetoTeste\rest\RestService.class
+br\com\projeto\teste\ext\ExceptionIdNaoEncontrado.class
+br\com\projeto\teste\ext\ExceptionIdNaoEncontradoMapper.class
+br\com\projeto\teste\service\PessoaService.class
+br\com\projeto\teste\entity\Pessoa.class
+br\com\projeto\teste\repository\PessoaRepository.class
+br\com\projeto\teste\repository\InicioRepository.class
