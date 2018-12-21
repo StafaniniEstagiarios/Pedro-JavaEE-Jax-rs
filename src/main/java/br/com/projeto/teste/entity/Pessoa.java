@@ -1,22 +1,24 @@
 package br.com.projeto.teste.entity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_PESSOA")
-@NamedQuery(name="Pessoa.findAll", query="SELECT p FROM TB_PESSOA p") 
+@Table(name = "TB_PESSOA")
 public class Pessoa {
 	private String nome, cargo;
 	private int idade;
 	
+	@Embedded
+	private Endereco endereco;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id = 0;
+	private int id;
 
 	public String getNome() {
 		return nome;
@@ -42,11 +44,6 @@ public class Pessoa {
 		this.cargo = cargo;
 	}
 
-	@Override
-	public String toString() {
-		return "Id: " + this.id + " | Nome: " + this.nome + " | Idade: " + this.idade + " | Cargo: " + this.cargo;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -54,19 +51,13 @@ public class Pessoa {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	@Override
-	public int hashCode() {
-		return this.id;
+	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) return false;
-	    if (!(obj instanceof Pessoa))
-	        return false;
-	    if (obj == this)
-	        return true;
-	    return this.getId() == ((Pessoa) obj).getId();
+	public Endereco getEndereco() {
+		return this.endereco;
 	}
+
 }

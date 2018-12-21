@@ -1,4 +1,4 @@
-package br.com.projeto.teste.repository;
+package br.com.projeto.teste.resource;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import br.com.projeto.teste.ext.ExceptionIdNaoEncontrado;
 import br.com.projeto.teste.service.PessoaService;
 
 @Path("/pessoas")
-public class PessoaRepository {
+public class PessoaResource {
 
 	@Inject
 	PessoaService pessoaService;
@@ -49,7 +49,9 @@ public class PessoaRepository {
 	@Consumes("application/json")
 	public String alteraPessoa(Pessoa pessoa) throws ExceptionIdNaoEncontrado {
 		Pessoa pessoaAlterada = pessoaService.buscarPessoa(pessoa.getId());
-		pessoaAlterada = pessoa;
+		pessoaAlterada.setCargo(pessoa.getCargo());
+		pessoaAlterada.setIdade(pessoa.getIdade());
+		pessoaAlterada.setNome(pessoa.getNome());
 		pessoaService.alterarPessoa(pessoaAlterada);
 		return pessoa.toString();
 	}
