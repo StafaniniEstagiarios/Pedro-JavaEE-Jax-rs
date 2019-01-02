@@ -11,7 +11,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 
 import br.com.projeto.teste.entity.Pessoa;
 import br.com.projeto.teste.ext.ExceptionIdNaoEncontrado;
@@ -32,34 +31,30 @@ public class PessoaResource {
 	@GET
 	@Path("/{id}")
 	@Produces("application/json")
-	public Response buscarPorId(@PathParam("id") int id) throws ExceptionIdNaoEncontrado {
-		String resultado = pessoaService.buscarPessoa(id).toString();
-		return Response.status(200).entity(resultado).build();
+	public Pessoa buscarPorId(@PathParam("id") int id) throws ExceptionIdNaoEncontrado {
+		return pessoaService.buscarPessoa(id);
 	}
 
 	@POST
 	@Consumes("application/json")
-	public Response criaPessoa(Pessoa pessoa) {
-		String resultado = "Pessoa criada : " + pessoa.toString();
-		pessoaService.adicionarPessoa(pessoa);
-		return Response.status(201).entity(resultado).build();
+	public Pessoa criaPessoa(Pessoa pessoa) {
+		return pessoaService.adicionarPessoa(pessoa);
 	}
 
 	@PUT
 	@Consumes("application/json")
-	public String alteraPessoa(Pessoa pessoa) throws ExceptionIdNaoEncontrado {
+	public Pessoa alteraPessoa(Pessoa pessoa) throws ExceptionIdNaoEncontrado {
 		Pessoa pessoaAlterada = pessoaService.buscarPessoa(pessoa.getId());
 		pessoaAlterada.setCargo(pessoa.getCargo());
 		pessoaAlterada.setIdade(pessoa.getIdade());
 		pessoaAlterada.setNome(pessoa.getNome());
 		pessoaService.alterarPessoa(pessoaAlterada);
-		return pessoa.toString();
+		return pessoa;
 	}
 
 	@DELETE
 	@Path("/{id}")
-	public String deletarPessoa(@PathParam("id") int id) {
-		pessoaService.deletarPessoa(id);
-		return "Pessoa " + id + " foi removida com sucesso";
+	public Pessoa deletarPessoa(@PathParam("id") int id) {
+		return pessoaService.deletarPessoa(id);
 	}
 }

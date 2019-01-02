@@ -1,6 +1,6 @@
 package br.com.projeto.teste.entity;
 
-import javax.persistence.Embedded;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +13,6 @@ public class Pessoa {
 	private String nome, cargo;
 	private int idade;
 	
-	@Embedded
-	private Endereco endereco;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,12 +50,4 @@ public class Pessoa {
 		this.id = id;
 	}
 	
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
-	public Endereco getEndereco() {
-		return this.endereco;
-	}
-
 }

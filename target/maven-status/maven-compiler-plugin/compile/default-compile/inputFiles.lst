@@ -1,10 +1,12 @@
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\dao\GenericDAO.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\ext\ExceptionIdNaoEncontrado.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\dto\PessoaDTO.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\resource\Inicio.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\resource\PessoaResource.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\producer\EntityManagerProducer.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\service\PessoaService.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\dao\PessoaDAO.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\interceptor\InterceptorTransactional.java
-C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\repository\PessoaRepository.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\entity\Pessoa.java
+C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\entity\Endereco.java
 C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\ext\ExceptionIdNaoEncontradoMapper.java
-C:\Users\pffreitas\Documents\Treinamento\ProjetoTeste\Workspace\ProjetoTeste\src\main\java\br\com\projeto\teste\repository\InicioRepository.java
